@@ -330,17 +330,17 @@ ReturnValue Actions::internalUseItem(Player* player, const Position &pos, uint8_
 		}
 
 		uint32_t corpseOwner = container->getCorpseOwner();
-		if (container->isRewardCorpse()) {
+		// if (container->isRewardCorpse()) {
 			// only players who participated in the fight can open the corpse
 			// if (player->getGroup()->id >= account::GROUP_TYPE_GAMEMASTER) {
 			//	return RETURNVALUE_YOUCANTOPENCORPSEADM;
 			// }
-			if (!player->getReward(rewardId, false)) {
-				return RETURNVALUE_YOUARENOTTHEOWNER;
-			}
-		} else if (corpseOwner != 0 && !player->canOpenCorpse(corpseOwner)) {
-			return RETURNVALUE_YOUARENOTTHEOWNER;
-		}
+		//	if (!player->getReward(rewardId, false)) {
+			//	return RETURNVALUE_YOUARENOTTHEOWNER;
+		//	}
+		//} else if (corpseOwner != 0 && !player->canOpenCorpse(corpseOwner)) {
+		 //	return RETURNVALUE_YOUARENOTTHEOWNER;
+		//}
 
 		// open/close container
 		int32_t oldContainerId = player->getContainerID(openContainer);
