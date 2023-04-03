@@ -1078,9 +1078,9 @@ Reward* Player::getReward(const uint64_t rewardId, const bool autoCreate) {
 	if (it != rewardMap.end()) {
 		return it->second;
 	}
-	if (!autoCreate) {
-		return nullptr;
-	}
+	//if (!autoCreate) {
+	//	return nullptr;
+	//}
 
 	auto reward = new Reward();
 	reward->incrementReferenceCounter();
